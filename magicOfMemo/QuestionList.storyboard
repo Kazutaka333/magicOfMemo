@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QsR-Fx-T3i">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="fge-9T-jmu">
+            <objects>
+                <viewController id="QsR-Fx-T3i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wye-uc-716">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-E0-KqV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="U6s-fv-BpV" customClass="QuestionTableViewCell" customModule="magicOfMemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6s-fv-BpV" id="HBQ-mI-VSf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-RO-ZM6">
+                                                    <rect key="frame" x="15" y="18.5" width="33" height="59"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="9e8-ed-0A1"/>
+                                                        <constraint firstAttribute="width" secondItem="DHa-RO-ZM6" secondAttribute="height" multiplier="1:1" id="Owc-UJ-kTW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                                    <state key="normal" title="○">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Owc-UJ-kTW"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自分の長所はどこ？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6N-na-ba7">
+                                                    <rect key="frame" x="56" y="37.5" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DHa-RO-ZM6" firstAttribute="centerY" secondItem="HBQ-mI-VSf" secondAttribute="centerY" id="1CD-ms-4pn"/>
+                                                <constraint firstItem="DHa-RO-ZM6" firstAttribute="leading" secondItem="HBQ-mI-VSf" secondAttribute="leadingMargin" id="1Fr-hm-WeX"/>
+                                                <constraint firstItem="u6N-na-ba7" firstAttribute="centerY" secondItem="HBQ-mI-VSf" secondAttribute="centerY" id="51N-qj-1Zv"/>
+                                                <constraint firstItem="u6N-na-ba7" firstAttribute="leading" secondItem="DHa-RO-ZM6" secondAttribute="trailing" constant="8" id="cI8-go-MvK"/>
+                                                <constraint firstItem="u6N-na-ba7" firstAttribute="trailing" secondItem="HBQ-mI-VSf" secondAttribute="trailingMargin" id="joN-Gj-tAk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkButton" destination="DHa-RO-ZM6" id="6VV-ha-cjd"/>
+                                            <outlet property="questionLabel" destination="u6N-na-ba7" id="0Fe-pS-FfO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cbD-E0-KqV" firstAttribute="bottom" secondItem="CJU-xC-8OI" secondAttribute="bottom" id="PJ5-cA-nOR"/>
+                            <constraint firstItem="cbD-E0-KqV" firstAttribute="trailing" secondItem="CJU-xC-8OI" secondAttribute="trailing" id="UMA-LF-jiq"/>
+                            <constraint firstItem="cbD-E0-KqV" firstAttribute="leading" secondItem="CJU-xC-8OI" secondAttribute="leading" id="qeT-mn-paf"/>
+                            <constraint firstItem="cbD-E0-KqV" firstAttribute="top" secondItem="CJU-xC-8OI" secondAttribute="top" id="rsL-gj-BC8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CJU-xC-8OI"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0VU-cb-ZS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.199999999999999" y="2.2488755622188905"/>
+        </scene>
+    </scenes>
+</document>
