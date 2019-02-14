@@ -11,14 +11,22 @@ import Foundation
 import CoreData
 
 @objc(TimeCategory)
-public class TimeCategory: NSManagedObject {
+public class TimeCategory: NSManagedObject, Decodable {
     
-    convenience init(title: String,
-                     questions: [Question],
-                     moc: NSManagedObjectContext) {
-        let entity = NSEntityDescription.entity(forEntityName: "TimeCategory", in: moc)
-        self.init(entity: entity!, insertInto: moc)
-        self.title = title
-        self.questions = NSOrderedSet(array: questions)
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case questions = "questions"
+    }
+
+    public required convenience init(from decoder: Decoder) throws {
+        guard let key = CodingUserInfoKey.context,
+            let moc = decoder.userInfo[key] as? NSManagedObjectContext,
+            let entity = NSEntityDescription.entity(forEntityName: "TimeCategory", in: moc)
+            else { fatalError() }
+        self.init(entity: entity, insertInto: moc)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        self.questions = try NSOrderedSet(array: container.decodeIfPresent([Question].self, forKey: .questions) ?? [])
     }
 }

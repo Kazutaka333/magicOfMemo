@@ -24,17 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func loadData() {
+    func loadData() throws {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         let moc = delegate.persistentContainer.viewContext
-        let question = Question(text: "将来の夢は？", moc: moc)
-        let timeCategory = TimeCategory(title: "幼少期", questions: [question], moc: moc)
-        let _ = Level(title: "level 1",
-                      timeCategories: [timeCategory],
-                      moc: moc)
-        
+        let decoder = JSONDecoder()
+        guard let contextKey = CodingUserInfoKey.context else {return}
+        decoder.userInfo[contextKey] = moc
+        guard let path = Bundle.main.path(forResource: "QuestionData", ofType: "json") else {return}
+        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        try decoder.decode(QuestionData.self, from: data)
         saveContext()
     }
 

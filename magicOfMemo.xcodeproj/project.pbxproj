@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */; };
+		D767F22B22162E19007493B2 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F22A22162E19007493B2 /* QuestionData.swift */; };
+		D767F22D22162F7B007493B2 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = D767F22C22162F7B007493B2 /* QuestionData.json */; };
 		D7A7BE33221142B5008DB582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7BE32221142B5008DB582 /* AppDelegate.swift */; };
 		D7A7BE35221142B5008DB582 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A7BE34221142B5008DB582 /* ViewController.swift */; };
 		D7A7BE38221142B5008DB582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A7BE36221142B5008DB582 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+MOC.swift"; sourceTree = "<group>"; };
+		D767F22A22162E19007493B2 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		D767F22C22162F7B007493B2 /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
 		D7A7BE2F221142B5008DB582 /* magicOfMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = magicOfMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A7BE32221142B5008DB582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A7BE34221142B5008DB582 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				D7F2C2B02212510600B7C6F4 /* ViewController */,
 				D7F2C2B12212512700B7C6F4 /* View */,
 				D7A7BE32221142B5008DB582 /* AppDelegate.swift */,
+				D767F22C22162F7B007493B2 /* QuestionData.json */,
 				D7A7BE3C221142B9008DB582 /* Assets.xcassets */,
 				D7A7BE3E221142B9008DB582 /* LaunchScreen.storyboard */,
 				D7A7BE41221142B9008DB582 /* Info.plist */,
@@ -161,6 +166,7 @@
 				D7F2C2A2221250B500B7C6F4 /* Level+CoreDataClass.swift */,
 				D7F2C2A3221250B600B7C6F4 /* Level+CoreDataProperties.swift */,
 				D7F2C2A4221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift */,
+				D767F22A22162E19007493B2 /* QuestionData.swift */,
 				D7F2C2A5221250B600B7C6F4 /* TimeCategory+CoreDataProperties.swift */,
 				D7F2C2A6221250B600B7C6F4 /* Question+CoreDataClass.swift */,
 				D7F2C2A7221250B600B7C6F4 /* Question+CoreDataProperties.swift */,
@@ -304,6 +310,7 @@
 				D7A7BE662211A0E4008DB582 /* QuestionList.storyboard in Resources */,
 				D7A7BE3D221142B9008DB582 /* Assets.xcassets in Resources */,
 				D7A7BE38221142B5008DB582 /* Main.storyboard in Resources */,
+				D767F22D22162F7B007493B2 /* QuestionData.json in Resources */,
 				D7A7BE642211A011008DB582 /* TimeCategory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +339,7 @@
 				D7F2C2A8221250B600B7C6F4 /* Level+CoreDataClass.swift in Sources */,
 				D7F2C2AD221250B600B7C6F4 /* Question+CoreDataProperties.swift in Sources */,
 				D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */,
+				D767F22B22162E19007493B2 /* QuestionData.swift in Sources */,
 				D7F2C2AA221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift in Sources */,
 				D7A7BE35221142B5008DB582 /* ViewController.swift in Sources */,
 				D7F2C2AC221250B600B7C6F4 /* Question+CoreDataClass.swift in Sources */,

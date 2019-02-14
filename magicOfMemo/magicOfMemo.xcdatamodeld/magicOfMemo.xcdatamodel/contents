@@ -14,11 +14,11 @@
     <entity name="TimeCategory" representedClassName="TimeCategory" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="level" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="timeCategories" inverseEntity="Level" syncable="YES"/>
-        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="timeCategory" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questions" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="timeCategory" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="Level" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="Question" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="TimeCategory" positionX="-36" positionY="27" width="128" height="90"/>
     </elements>
 </model>
