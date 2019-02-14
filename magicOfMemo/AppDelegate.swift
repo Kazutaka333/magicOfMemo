@@ -17,7 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if !(UserDefaults.standard.bool(forKey: "FirstLaunchDone")) {
+            
+            UserDefaults.standard.set(true, forKey: "FirstLaunchDone")
+        }
         return true
+    }
+    
+    func loadData() {
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let moc = delegate.persistentContainer.viewContext
+        let question = Question(text: "将来の夢は？", moc: moc)
+        let timeCategory = TimeCategory(title: "幼少期", questions: [question], moc: moc)
+        let _ = Level(title: "level 1",
+                      timeCategories: [timeCategory],
+                      moc: moc)
+        
+        saveContext()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -89,5 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
 }
 
