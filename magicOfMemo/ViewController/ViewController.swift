@@ -17,7 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadLevels()
-        tableView.register(UINib(nibName: "ProgressBarCell", bundle: Bundle.main), forCellReuseIdentifier: "ProgressBarCell")
+        tableView.register(UINib(nibName: "LevelCell", bundle: Bundle.main), forCellReuseIdentifier: "LevelCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func loadLevels() {
@@ -46,9 +50,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressBarCell") as! ProgressBarCell
-        cell.titleLabel.text = levels[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell") as! LevelCell
         cell.indexPath = indexPath
+        cell.level = levels[indexPath.row]
         return cell
     }
     
@@ -64,11 +68,12 @@ extension ViewController: UITableViewDelegate {
         vc.title = level.title
         vc.timeCategories = categories
         tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.navigationBar.prefersLargeTitles = false
         show(vc, sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return CELL_HEIGHT
     }
 }
 

@@ -42,7 +42,6 @@ class ProgressBarCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         bgView.layer.cornerRadius = bgView.frame.height/6
-        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 3)
     }
 
     

@@ -25,3 +25,9 @@ extension QuestionListViewController : UITableViewDataSource {
         return cell
     }
 }
+
+extension QuestionListViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CELL_HEIGHT
+    }
+}

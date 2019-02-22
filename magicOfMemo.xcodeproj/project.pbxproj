@@ -11,7 +11,11 @@
 		D70215B6221B9F470035A35A /* QuestionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70215B4221B9F470035A35A /* QuestionData+CoreDataProperties.swift */; };
 		D70215B8221BC6F60035A35A /* TimeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */; };
 		D713E279221FE9DB007ACACE /* ProgressBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E277221FE9DB007ACACE /* ProgressBarCell.swift */; };
-		D713E27A221FE9DB007ACACE /* ProgressBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E278221FE9DB007ACACE /* ProgressBarCell.xib */; };
+		D713E27A221FE9DB007ACACE /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E278221FE9DB007ACACE /* LevelCell.xib */; };
+		D713E27C22207033007ACACE /* TimeCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E27B22207033007ACACE /* TimeCategoryCell.xib */; };
+		D713E27E2220726D007ACACE /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E27D2220726D007ACACE /* LevelCell.swift */; };
+		D713E2802220803C007ACACE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E27F2220803C007ACACE /* Constants.swift */; };
+		D713E282222082B6007ACACE /* ThickerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E281222082B6007ACACE /* ThickerProgressView.swift */; };
 		D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */; };
 		D767F22B22162E19007493B2 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F22A22162E19007493B2 /* QuestionData.swift */; };
 		D767F22D22162F7B007493B2 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = D767F22C22162F7B007493B2 /* QuestionData.json */; };
@@ -58,7 +62,11 @@
 		D70215B4221B9F470035A35A /* QuestionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCategoryCell.swift; sourceTree = "<group>"; };
 		D713E277221FE9DB007ACACE /* ProgressBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarCell.swift; sourceTree = "<group>"; };
-		D713E278221FE9DB007ACACE /* ProgressBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBarCell.xib; sourceTree = "<group>"; };
+		D713E278221FE9DB007ACACE /* LevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCell.xib; sourceTree = "<group>"; };
+		D713E27B22207033007ACACE /* TimeCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeCategoryCell.xib; sourceTree = "<group>"; };
+		D713E27D2220726D007ACACE /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
+		D713E27F2220803C007ACACE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D713E281222082B6007ACACE /* ThickerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThickerProgressView.swift; sourceTree = "<group>"; };
 		D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+MOC.swift"; sourceTree = "<group>"; };
 		D767F22A22162E19007493B2 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		D767F22C22162F7B007493B2 /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 		D7A7BE31221142B5008DB582 /* magicOfMemo */ = {
 			isa = PBXGroup;
 			children = (
+				D713E27F2220803C007ACACE /* Constants.swift */,
 				D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */,
 				D7F2C2AE221250D400B7C6F4 /* Model */,
 				D7F2C2AF221250E700B7C6F4 /* Storyboard */,
@@ -209,8 +218,11 @@
 		D7F2C2B12212512700B7C6F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D713E281222082B6007ACACE /* ThickerProgressView.swift */,
+				D713E27D2220726D007ACACE /* LevelCell.swift */,
 				D713E277221FE9DB007ACACE /* ProgressBarCell.swift */,
-				D713E278221FE9DB007ACACE /* ProgressBarCell.xib */,
+				D713E278221FE9DB007ACACE /* LevelCell.xib */,
+				D713E27B22207033007ACACE /* TimeCategoryCell.xib */,
 				D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */,
 				D7F2C2A02211B68600B7C6F4 /* QuestionCell.swift */,
 			);
@@ -323,10 +335,11 @@
 			files = (
 				D7A7BE40221142B9008DB582 /* LaunchScreen.storyboard in Resources */,
 				D7A7BE662211A0E4008DB582 /* QuestionList.storyboard in Resources */,
+				D713E27C22207033007ACACE /* TimeCategoryCell.xib in Resources */,
 				D7A7BE3D221142B9008DB582 /* Assets.xcassets in Resources */,
 				D7A7BE38221142B5008DB582 /* Main.storyboard in Resources */,
 				D767F22D22162F7B007493B2 /* QuestionData.json in Resources */,
-				D713E27A221FE9DB007ACACE /* ProgressBarCell.xib in Resources */,
+				D713E27A221FE9DB007ACACE /* LevelCell.xib in Resources */,
 				D7A7BE642211A011008DB582 /* TimeCategory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,8 +377,11 @@
 				D7F2C29D2211B28900B7C6F4 /* TimeCategoryViewController.swift in Sources */,
 				D7F2C2A9221250B600B7C6F4 /* Level+CoreDataProperties.swift in Sources */,
 				D7F2C2A12211B68600B7C6F4 /* QuestionCell.swift in Sources */,
+				D713E27E2220726D007ACACE /* LevelCell.swift in Sources */,
 				D70215B5221B9F470035A35A /* QuestionData+CoreDataClass.swift in Sources */,
 				D7A7BE3B221142B5008DB582 /* magicOfMemo.xcdatamodeld in Sources */,
+				D713E282222082B6007ACACE /* ThickerProgressView.swift in Sources */,
+				D713E2802220803C007ACACE /* Constants.swift in Sources */,
 				D70215B6221B9F470035A35A /* QuestionData+CoreDataProperties.swift in Sources */,
 				D7F2C2AB221250B600B7C6F4 /* TimeCategory+CoreDataProperties.swift in Sources */,
 				D713E279221FE9DB007ACACE /* ProgressBarCell.swift in Sources */,

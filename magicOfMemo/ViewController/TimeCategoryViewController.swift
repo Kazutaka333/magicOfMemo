@@ -15,9 +15,10 @@ class TimeCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.register(UINib(nibName: "ProgressBarCell", bundle: Bundle.main), forCellReuseIdentifier: "ProgressBarCell")
+        tableView.register(UINib(nibName: "TimeCategoryCell", bundle: Bundle.main), forCellReuseIdentifier: "TimeCategoryCell")
     }
 }
+
 
 extension TimeCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,11 +26,9 @@ extension TimeCategoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressBarCell", for: indexPath) as! TimeCategoryCell
-        cell.titleLabel.text = timeCategories[indexPath.row].title
-        guard let qs = timeCategories[indexPath.row].questions.array as? [Question] else {return cell}
-        cell.questions = qs
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeCategoryCell", for: indexPath) as! TimeCategoryCell
+        cell.timeCategory = timeCategories[indexPath.row]
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -44,6 +43,11 @@ extension TimeCategoryViewController: UITableViewDelegate {
         guard let questions = tc.questions.array as? [Question] else {return}
         vc.questions = questions
         vc.title = tc.title
+        tableView.deselectRow(at: indexPath, animated: true)
         show(vc, sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CELL_HEIGHT
     }
 }
