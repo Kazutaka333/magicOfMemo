@@ -10,33 +10,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Question List View Controller-->
         <scene sceneID="fge-9T-jmu">
             <objects>
-                <viewController id="QsR-Fx-T3i" sceneMemberID="viewController">
+                <viewController id="QsR-Fx-T3i" customClass="QuestionListViewController" customModule="magicOfMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wye-uc-716">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-E0-KqV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cbD-E0-KqV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="U6s-fv-BpV" customClass="QuestionTableViewCell" customModule="magicOfMemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="96"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionCell" rowHeight="70" id="U6s-fv-BpV" customClass="QuestionCell" customModule="magicOfMemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U6s-fv-BpV" id="HBQ-mI-VSf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-RO-ZM6">
-                                                    <rect key="frame" x="15" y="18.5" width="33" height="59"/>
+                                                    <rect key="frame" x="15" y="11.5" width="33" height="47"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="33" id="9e8-ed-0A1"/>
                                                         <constraint firstAttribute="width" secondItem="DHa-RO-ZM6" secondAttribute="height" multiplier="1:1" id="Owc-UJ-kTW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                                    <state key="normal" title="○">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                    <state key="normal" title="⏹">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <variation key="default">
@@ -44,9 +44,12 @@
                                                             <exclude reference="Owc-UJ-kTW"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="checkBoxPressed:" destination="U6s-fv-BpV" eventType="touchUpInside" id="77L-bz-5xO"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自分の長所はどこ？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6N-na-ba7">
-                                                    <rect key="frame" x="56" y="37.5" width="304" height="21"/>
+                                                    <rect key="frame" x="56" y="24.5" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,6 +69,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QsR-Fx-T3i" id="XLi-CA-bP4"/>
+                                    <outlet property="delegate" destination="QsR-Fx-T3i" id="p8w-WA-Kit"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,6 +85,9 @@
                         <viewLayoutGuide key="safeArea" id="CJU-xC-8OI"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="cbD-E0-KqV" id="LsQ-XY-bcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VU-cb-ZS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

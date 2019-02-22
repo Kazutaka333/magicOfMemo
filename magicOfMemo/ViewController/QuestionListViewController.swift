@@ -9,12 +9,19 @@
 import UIKit
 
 class QuestionListViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var questions: [Question] = []
+}
 
-    let questions = [[],[],[],[],[],[],[],[],[],[]]
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+extension QuestionListViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return questions.count
     }
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as! QuestionCell
+        cell.question = questions[indexPath.row]
+        return cell
+    }
 }

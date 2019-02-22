@@ -6,8 +6,8 @@
 //  Copyright © 2019 Kazutaka. All rights reserved.
 //
 
-import Foundation
-
-struct QuestionData: Decodable {
-    let levels: [Level]
-}
+//import Foundation
+//
+//struct QuestionData: Decodable {
+//    let levels: [Level]
+//}

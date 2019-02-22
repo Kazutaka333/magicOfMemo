@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70215B5221B9F470035A35A /* QuestionData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70215B3221B9F470035A35A /* QuestionData+CoreDataClass.swift */; };
+		D70215B6221B9F470035A35A /* QuestionData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70215B4221B9F470035A35A /* QuestionData+CoreDataProperties.swift */; };
+		D70215B8221BC6F60035A35A /* TimeCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */; };
+		D713E279221FE9DB007ACACE /* ProgressBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E277221FE9DB007ACACE /* ProgressBarCell.swift */; };
+		D713E27A221FE9DB007ACACE /* ProgressBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E278221FE9DB007ACACE /* ProgressBarCell.xib */; };
 		D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */; };
 		D767F22B22162E19007493B2 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F22A22162E19007493B2 /* QuestionData.swift */; };
 		D767F22D22162F7B007493B2 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = D767F22C22162F7B007493B2 /* QuestionData.json */; };
@@ -22,7 +27,7 @@
 		D7A7BE662211A0E4008DB582 /* QuestionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A7BE652211A0E4008DB582 /* QuestionList.storyboard */; };
 		D7F2C29D2211B28900B7C6F4 /* TimeCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C29C2211B28800B7C6F4 /* TimeCategoryViewController.swift */; };
 		D7F2C29F2211B66C00B7C6F4 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C29E2211B66C00B7C6F4 /* QuestionListViewController.swift */; };
-		D7F2C2A12211B68600B7C6F4 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C2A02211B68600B7C6F4 /* QuestionTableViewCell.swift */; };
+		D7F2C2A12211B68600B7C6F4 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C2A02211B68600B7C6F4 /* QuestionCell.swift */; };
 		D7F2C2A8221250B600B7C6F4 /* Level+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C2A2221250B500B7C6F4 /* Level+CoreDataClass.swift */; };
 		D7F2C2A9221250B600B7C6F4 /* Level+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C2A3221250B600B7C6F4 /* Level+CoreDataProperties.swift */; };
 		D7F2C2AA221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2C2A4221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70215B3221B9F470035A35A /* QuestionData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D70215B4221B9F470035A35A /* QuestionData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCategoryCell.swift; sourceTree = "<group>"; };
+		D713E277221FE9DB007ACACE /* ProgressBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarCell.swift; sourceTree = "<group>"; };
+		D713E278221FE9DB007ACACE /* ProgressBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressBarCell.xib; sourceTree = "<group>"; };
 		D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+MOC.swift"; sourceTree = "<group>"; };
 		D767F22A22162E19007493B2 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		D767F22C22162F7B007493B2 /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
@@ -70,7 +80,7 @@
 		D7A7BE652211A0E4008DB582 /* QuestionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionList.storyboard; sourceTree = "<group>"; };
 		D7F2C29C2211B28800B7C6F4 /* TimeCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCategoryViewController.swift; sourceTree = "<group>"; };
 		D7F2C29E2211B66C00B7C6F4 /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
-		D7F2C2A02211B68600B7C6F4 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		D7F2C2A02211B68600B7C6F4 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		D7F2C2A2221250B500B7C6F4 /* Level+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D7F2C2A3221250B600B7C6F4 /* Level+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Level+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7F2C2A4221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -163,10 +173,12 @@
 		D7F2C2AE221250D400B7C6F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D70215B3221B9F470035A35A /* QuestionData+CoreDataClass.swift */,
+				D70215B4221B9F470035A35A /* QuestionData+CoreDataProperties.swift */,
+				D767F22A22162E19007493B2 /* QuestionData.swift */,
 				D7F2C2A2221250B500B7C6F4 /* Level+CoreDataClass.swift */,
 				D7F2C2A3221250B600B7C6F4 /* Level+CoreDataProperties.swift */,
 				D7F2C2A4221250B600B7C6F4 /* TimeCategory+CoreDataClass.swift */,
-				D767F22A22162E19007493B2 /* QuestionData.swift */,
 				D7F2C2A5221250B600B7C6F4 /* TimeCategory+CoreDataProperties.swift */,
 				D7F2C2A6221250B600B7C6F4 /* Question+CoreDataClass.swift */,
 				D7F2C2A7221250B600B7C6F4 /* Question+CoreDataProperties.swift */,
@@ -197,7 +209,10 @@
 		D7F2C2B12212512700B7C6F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D7F2C2A02211B68600B7C6F4 /* QuestionTableViewCell.swift */,
+				D713E277221FE9DB007ACACE /* ProgressBarCell.swift */,
+				D713E278221FE9DB007ACACE /* ProgressBarCell.xib */,
+				D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */,
+				D7F2C2A02211B68600B7C6F4 /* QuestionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -311,6 +326,7 @@
 				D7A7BE3D221142B9008DB582 /* Assets.xcassets in Resources */,
 				D7A7BE38221142B5008DB582 /* Main.storyboard in Resources */,
 				D767F22D22162F7B007493B2 /* QuestionData.json in Resources */,
+				D713E27A221FE9DB007ACACE /* ProgressBarCell.xib in Resources */,
 				D7A7BE642211A011008DB582 /* TimeCategory.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,11 +360,15 @@
 				D7A7BE35221142B5008DB582 /* ViewController.swift in Sources */,
 				D7F2C2AC221250B600B7C6F4 /* Question+CoreDataClass.swift in Sources */,
 				D7A7BE33221142B5008DB582 /* AppDelegate.swift in Sources */,
+				D70215B8221BC6F60035A35A /* TimeCategoryCell.swift in Sources */,
 				D7F2C29D2211B28900B7C6F4 /* TimeCategoryViewController.swift in Sources */,
 				D7F2C2A9221250B600B7C6F4 /* Level+CoreDataProperties.swift in Sources */,
-				D7F2C2A12211B68600B7C6F4 /* QuestionTableViewCell.swift in Sources */,
+				D7F2C2A12211B68600B7C6F4 /* QuestionCell.swift in Sources */,
+				D70215B5221B9F470035A35A /* QuestionData+CoreDataClass.swift in Sources */,
 				D7A7BE3B221142B5008DB582 /* magicOfMemo.xcdatamodeld in Sources */,
+				D70215B6221B9F470035A35A /* QuestionData+CoreDataProperties.swift in Sources */,
 				D7F2C2AB221250B600B7C6F4 /* TimeCategory+CoreDataProperties.swift in Sources */,
+				D713E279221FE9DB007ACACE /* ProgressBarCell.swift in Sources */,
 				D7F2C29F2211B66C00B7C6F4 /* QuestionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

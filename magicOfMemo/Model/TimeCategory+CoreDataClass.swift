@@ -27,6 +27,7 @@ public class TimeCategory: NSManagedObject, Decodable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
-        self.questions = try NSOrderedSet(array: container.decodeIfPresent([Question].self, forKey: .questions) ?? [])
+        let questions = try container.decodeIfPresent([Question].self, forKey: .questions) ?? []
+        self.addToQuestions(NSOrderedSet(array: questions)) 
     }
 }

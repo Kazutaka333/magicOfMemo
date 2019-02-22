@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G5019" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Level" representedClassName="Level" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questionData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionData" inverseName="levels" inverseEntity="QuestionData" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="level" inverseEntity="Question" syncable="YES"/>
         <relationship name="timeCategories" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TimeCategory" inverseName="level" inverseEntity="TimeCategory" syncable="YES"/>
     </entity>
@@ -11,14 +12,18 @@
         <relationship name="level" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="questions" inverseEntity="Level" syncable="YES"/>
         <relationship name="timeCategory" maxCount="1" deletionRule="Nullify" destinationEntity="TimeCategory" inverseName="questions" inverseEntity="TimeCategory" syncable="YES"/>
     </entity>
+    <entity name="QuestionData" representedClassName="QuestionData" syncable="YES">
+        <relationship name="levels" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Level" inverseName="questionData" inverseEntity="Level" syncable="YES"/>
+    </entity>
     <entity name="TimeCategory" representedClassName="TimeCategory" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="level" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="timeCategories" inverseEntity="Level" syncable="YES"/>
         <relationship name="questions" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="timeCategory" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Level" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="Level" positionX="-54" positionY="18" width="128" height="105"/>
         <element name="Question" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="TimeCategory" positionX="-36" positionY="27" width="128" height="90"/>
+        <element name="QuestionData" positionX="-54" positionY="36" width="128" height="60"/>
     </elements>
 </model>

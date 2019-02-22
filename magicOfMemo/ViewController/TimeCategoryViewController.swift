@@ -10,36 +10,40 @@ import UIKit
 
 class TimeCategoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let timeCategories = [["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","未来","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在"],
-                          ["introduction","幼少期","小学校","中学校","高校","大学","社会人（20代）","現在","conclusion"]]
-    var index: Int!
-
+    var timeCategories: [TimeCategory] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        tableView.register(UINib(nibName: "ProgressBarCell", bundle: Bundle.main), forCellReuseIdentifier: "ProgressBarCell")
+    }
 }
 
 extension TimeCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeCategories[index].count
+        return timeCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TimeCategory")
-        cell?.textLabel?.text = timeCategories[index][indexPath.row]
-        return cell!
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressBarCell", for: indexPath) as! TimeCategoryCell
+        cell.titleLabel.text = timeCategories[indexPath.row].title
+        guard let qs = timeCategories[indexPath.row].questions.array as? [Question] else {return cell}
+        cell.questions = qs
+        return cell
     }
     
     
 }
 
 extension TimeCategoryViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/CGFloat(timeCategories[index].count)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "QuestionList", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() as? QuestionListViewController else {return}
+        let tc = timeCategories[indexPath.row]
+        guard let questions = tc.questions.array as? [Question] else {return}
+        vc.questions = questions
+        vc.title = tc.title
+        show(vc, sender: self)
     }
 }

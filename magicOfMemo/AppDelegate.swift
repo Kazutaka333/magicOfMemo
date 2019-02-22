@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if !(UserDefaults.standard.bool(forKey: "FirstLaunchDone")) {
-            
+            guard let _ = try?loadData() else {
+                return true
+            }
             UserDefaults.standard.set(true, forKey: "FirstLaunchDone")
         }
         return true
@@ -34,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         decoder.userInfo[contextKey] = moc
         guard let path = Bundle.main.path(forResource: "QuestionData", ofType: "json") else {return}
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        try decoder.decode(QuestionData.self, from: data)
+        let _ = try decoder.decode(QuestionData.self, from: data)
         saveContext()
     }
 
