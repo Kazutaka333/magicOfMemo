@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.reloadData()
+        super.viewWillAppear(animated)
     }
     
     func loadLevels() {

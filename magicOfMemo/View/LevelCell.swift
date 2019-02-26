@@ -18,7 +18,7 @@ class LevelCell: ProgressBarCell {
                     if q.isDone {doneCount += 1}
                 }
             }
-            progressBar.setProgress(Float(doneCount)/Float(level.questions.count), animated: true)
+            progressBar.setProgress(Float(doneCount)/Float(level.questions.count), animated: false)
             progressLabel.text = "\(doneCount)/\(level.questions.count)"
         }
     }

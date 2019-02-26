@@ -7,40 +7,54 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class QuestionCell: UITableViewCell {
-
-    @IBOutlet weak var checkButton: UIButton!
+    
+    @IBOutlet weak var checkBox: BEMCheckBox!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var bgView: UIView!
+
+    var indexPath : IndexPath! {
+        didSet {
+            let index = indexPath.row % 8
+            bgView.backgroundColor = BG_COLORS[index]
+            checkBox.onFillColor = TINT_COLORS[index]
+        }
+    }
     var question: Question! {
         didSet{
             questionLabel.text = question.text
-            isDone = question.isDone
-        }
-    }
-    var isDone: Bool! {
-        didSet {
-            question.isDone = isDone
-            if isDone {
-                checkButton.setTitle("✅", for: .normal)
-//                checkButton.setImage(UIImage(named: "checked"), for: .normal)
-            } else {
-                checkButton.setTitle("⏹", for: .normal)
-//                checkButton.setImage(UIImage(named: "unchecked"), for: .normal)
-            }
+            checkBox.on = question.isDone
         }
     }
     
-    @IBAction func checkBoxPressed(_ sender: Any) {
+    var isDone: Bool! {
+        didSet {
+            question.isDone = isDone
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        bgView.layer.cornerRadius = bgView.frame.height/4
+        bgView.clipsToBounds = true
+        checkBox.animationDuration = 0.2
+    }
+    
+}
+
+extension QuestionCell : BEMCheckBoxDelegate {    
+    func animationDidStop(for checkBox: BEMCheckBox) {
+        question.isDone = checkBox.on
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let moc = delegate.persistentContainer.viewContext
-        isDone = !isDone
         do {
             try moc.save()
         } catch {
             question.isDone = !(question.isDone)
+            checkBox.on = !(checkBox.on)
             fatalError("Failure to save context: \(error)")
         }
     }
-    
 }

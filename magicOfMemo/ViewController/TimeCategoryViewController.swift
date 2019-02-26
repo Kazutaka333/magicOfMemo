@@ -17,6 +17,11 @@ class TimeCategoryViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tableView.register(UINib(nibName: "TimeCategoryCell", bundle: Bundle.main), forCellReuseIdentifier: "TimeCategoryCell")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        super.viewWillAppear(animated)
+    }
 }
 
 
@@ -31,7 +36,6 @@ extension TimeCategoryViewController: UITableViewDataSource {
         cell.indexPath = indexPath
         return cell
     }
-    
     
 }
 

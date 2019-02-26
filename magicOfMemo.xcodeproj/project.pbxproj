@@ -16,6 +16,8 @@
 		D713E27E2220726D007ACACE /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E27D2220726D007ACACE /* LevelCell.swift */; };
 		D713E2802220803C007ACACE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E27F2220803C007ACACE /* Constants.swift */; };
 		D713E282222082B6007ACACE /* ThickerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E281222082B6007ACACE /* ThickerProgressView.swift */; };
+		D713E28C22253B2B007ACACE /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E28B22253B2A007ACACE /* QuestionCell.xib */; };
+		D713E28E22254408007ACACE /* BEMCheckBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D713E28D22254407007ACACE /* BEMCheckBox.framework */; };
 		D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */; };
 		D767F22B22162E19007493B2 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F22A22162E19007493B2 /* QuestionData.swift */; };
 		D767F22D22162F7B007493B2 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = D767F22C22162F7B007493B2 /* QuestionData.json */; };
@@ -67,6 +69,8 @@
 		D713E27D2220726D007ACACE /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
 		D713E27F2220803C007ACACE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D713E281222082B6007ACACE /* ThickerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThickerProgressView.swift; sourceTree = "<group>"; };
+		D713E28B22253B2A007ACACE /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		D713E28D22254407007ACACE /* BEMCheckBox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMCheckBox.framework; path = Carthage/Build/iOS/BEMCheckBox.framework; sourceTree = "<group>"; };
 		D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+MOC.swift"; sourceTree = "<group>"; };
 		D767F22A22162E19007493B2 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		D767F22C22162F7B007493B2 /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D713E28E22254408007ACACE /* BEMCheckBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,7 @@
 		D7A7BE26221142B4008DB582 = {
 			isa = PBXGroup;
 			children = (
+				D713E28D22254407007ACACE /* BEMCheckBox.framework */,
 				D7A7BE31221142B5008DB582 /* magicOfMemo */,
 				D7A7BE49221142B9008DB582 /* magicOfMemoTests */,
 				D7A7BE54221142B9008DB582 /* magicOfMemoUITests */,
@@ -221,6 +227,7 @@
 				D713E281222082B6007ACACE /* ThickerProgressView.swift */,
 				D713E27D2220726D007ACACE /* LevelCell.swift */,
 				D713E277221FE9DB007ACACE /* ProgressBarCell.swift */,
+				D713E28B22253B2A007ACACE /* QuestionCell.xib */,
 				D713E278221FE9DB007ACACE /* LevelCell.xib */,
 				D713E27B22207033007ACACE /* TimeCategoryCell.xib */,
 				D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */,
@@ -239,6 +246,7 @@
 				D7A7BE2B221142B5008DB582 /* Sources */,
 				D7A7BE2C221142B5008DB582 /* Frameworks */,
 				D7A7BE2D221142B5008DB582 /* Resources */,
+				D713E28F22254E78007ACACE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -337,6 +345,7 @@
 				D7A7BE662211A0E4008DB582 /* QuestionList.storyboard in Resources */,
 				D713E27C22207033007ACACE /* TimeCategoryCell.xib in Resources */,
 				D7A7BE3D221142B9008DB582 /* Assets.xcassets in Resources */,
+				D713E28C22253B2B007ACACE /* QuestionCell.xib in Resources */,
 				D7A7BE38221142B5008DB582 /* Main.storyboard in Resources */,
 				D767F22D22162F7B007493B2 /* QuestionData.json in Resources */,
 				D713E27A221FE9DB007ACACE /* LevelCell.xib in Resources */,
@@ -359,6 +368,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D713E28F22254E78007ACACE /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/BEMCheckBox.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BEMCheckBox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D7A7BE2B221142B5008DB582 /* Sources */ = {
@@ -562,6 +594,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2M5Z36K6T8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = magicOfMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,6 +616,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2M5Z36K6T8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = magicOfMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

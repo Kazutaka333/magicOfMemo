@@ -12,6 +12,11 @@ class QuestionListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var questions: [Question] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UINib(nibName: "QuestionCell", bundle: Bundle.main), forCellReuseIdentifier: "QuestionCell")
+    }
 }
 
 extension QuestionListViewController : UITableViewDataSource {
@@ -22,6 +27,7 @@ extension QuestionListViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionCell", for: indexPath) as! QuestionCell
         cell.question = questions[indexPath.row]
+        cell.indexPath = indexPath
         return cell
     }
 }
@@ -29,5 +35,10 @@ extension QuestionListViewController : UITableViewDataSource {
 extension QuestionListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CELL_HEIGHT
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? QuestionCell else {return}
+        cell.checkBox.setOn(!(cell.checkBox.on), animated: true)
     }
 }

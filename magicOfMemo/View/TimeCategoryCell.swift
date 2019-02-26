@@ -20,7 +20,7 @@ class TimeCategoryCell: ProgressBarCell {
                 }
             }
             progressLabel.text = "\(doneCount)/\(timeCategory.questions.count)"
-            progressBar.setProgress(Float(doneCount)/Float(timeCategory.questions.count), animated: true)
+            progressBar.setProgress(Float(doneCount)/Float(timeCategory.questions.count), animated: false)
         }
     }
 }
