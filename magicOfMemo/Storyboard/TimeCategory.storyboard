@@ -36,7 +36,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TA1-NM-nHG"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Title" id="1As-IU-Kzy">
+                        <barButtonItem key="backBarButtonItem" title="   " id="LiJ-Ku-fYK"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="ldW-2w-ZfM" id="NQk-Pa-dh7"/>
                     </connections>

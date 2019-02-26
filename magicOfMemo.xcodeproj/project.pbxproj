@@ -18,6 +18,8 @@
 		D713E282222082B6007ACACE /* ThickerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E281222082B6007ACACE /* ThickerProgressView.swift */; };
 		D713E28C22253B2B007ACACE /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D713E28B22253B2A007ACACE /* QuestionCell.xib */; };
 		D713E28E22254408007ACACE /* BEMCheckBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D713E28D22254407007ACACE /* BEMCheckBox.framework */; };
+		D713E2912225DB09007ACACE /* ColoredBGCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E2902225DB09007ACACE /* ColoredBGCell.swift */; };
+		D713E2932225E6AE007ACACE /* UINavigationBar+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D713E2922225E6AE007ACACE /* UINavigationBar+shadow.swift */; };
 		D767F229221583A6007493B2 /* CodingUserInfoKey+MOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */; };
 		D767F22B22162E19007493B2 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D767F22A22162E19007493B2 /* QuestionData.swift */; };
 		D767F22D22162F7B007493B2 /* QuestionData.json in Resources */ = {isa = PBXBuildFile; fileRef = D767F22C22162F7B007493B2 /* QuestionData.json */; };
@@ -71,6 +73,8 @@
 		D713E281222082B6007ACACE /* ThickerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThickerProgressView.swift; sourceTree = "<group>"; };
 		D713E28B22253B2A007ACACE /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		D713E28D22254407007ACACE /* BEMCheckBox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMCheckBox.framework; path = Carthage/Build/iOS/BEMCheckBox.framework; sourceTree = "<group>"; };
+		D713E2902225DB09007ACACE /* ColoredBGCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBGCell.swift; sourceTree = "<group>"; };
+		D713E2922225E6AE007ACACE /* UINavigationBar+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+shadow.swift"; sourceTree = "<group>"; };
 		D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+MOC.swift"; sourceTree = "<group>"; };
 		D767F22A22162E19007493B2 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		D767F22C22162F7B007493B2 /* QuestionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionData.json; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			children = (
 				D713E27F2220803C007ACACE /* Constants.swift */,
 				D767F228221583A6007493B2 /* CodingUserInfoKey+MOC.swift */,
+				D713E2922225E6AE007ACACE /* UINavigationBar+shadow.swift */,
 				D7F2C2AE221250D400B7C6F4 /* Model */,
 				D7F2C2AF221250E700B7C6F4 /* Storyboard */,
 				D7F2C2B02212510600B7C6F4 /* ViewController */,
@@ -225,11 +230,12 @@
 			isa = PBXGroup;
 			children = (
 				D713E281222082B6007ACACE /* ThickerProgressView.swift */,
-				D713E27D2220726D007ACACE /* LevelCell.swift */,
 				D713E277221FE9DB007ACACE /* ProgressBarCell.swift */,
+				D713E2902225DB09007ACACE /* ColoredBGCell.swift */,
 				D713E28B22253B2A007ACACE /* QuestionCell.xib */,
 				D713E278221FE9DB007ACACE /* LevelCell.xib */,
 				D713E27B22207033007ACACE /* TimeCategoryCell.xib */,
+				D713E27D2220726D007ACACE /* LevelCell.swift */,
 				D70215B7221BC6F60035A35A /* TimeCategoryCell.swift */,
 				D7F2C2A02211B68600B7C6F4 /* QuestionCell.swift */,
 			);
@@ -408,6 +414,7 @@
 				D70215B8221BC6F60035A35A /* TimeCategoryCell.swift in Sources */,
 				D7F2C29D2211B28900B7C6F4 /* TimeCategoryViewController.swift in Sources */,
 				D7F2C2A9221250B600B7C6F4 /* Level+CoreDataProperties.swift in Sources */,
+				D713E2912225DB09007ACACE /* ColoredBGCell.swift in Sources */,
 				D7F2C2A12211B68600B7C6F4 /* QuestionCell.swift in Sources */,
 				D713E27E2220726D007ACACE /* LevelCell.swift in Sources */,
 				D70215B5221B9F470035A35A /* QuestionData+CoreDataClass.swift in Sources */,
@@ -416,6 +423,7 @@
 				D713E2802220803C007ACACE /* Constants.swift in Sources */,
 				D70215B6221B9F470035A35A /* QuestionData+CoreDataProperties.swift in Sources */,
 				D7F2C2AB221250B600B7C6F4 /* TimeCategory+CoreDataProperties.swift in Sources */,
+				D713E2932225E6AE007ACACE /* UINavigationBar+shadow.swift in Sources */,
 				D713E279221FE9DB007ACACE /* ProgressBarCell.swift in Sources */,
 				D7F2C29F2211B66C00B7C6F4 /* QuestionListViewController.swift in Sources */,
 			);

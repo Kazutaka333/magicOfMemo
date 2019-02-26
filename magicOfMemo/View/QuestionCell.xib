@@ -83,7 +83,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="ZGo-um-xhd"/>
             <connections>
-                <outlet property="bgView" destination="8Rm-Qp-9k5" id="fXh-K9-nJc"/>
+                <outlet property="bgView" destination="8Rm-Qp-9k5" id="1z2-a9-SJK"/>
                 <outlet property="checkBox" destination="dgK-o4-T3o" id="v69-rw-A47"/>
                 <outlet property="questionLabel" destination="hL7-pN-QoU" id="JlV-GS-z5J"/>
             </connections>

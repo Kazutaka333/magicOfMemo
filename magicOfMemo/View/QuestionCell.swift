@@ -9,19 +9,11 @@
 import UIKit
 import BEMCheckBox
 
-class QuestionCell: UITableViewCell {
+class QuestionCell: ColoredBGCell {
     
     @IBOutlet weak var checkBox: BEMCheckBox!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var bgView: UIView!
 
-    var indexPath : IndexPath! {
-        didSet {
-            let index = indexPath.row % 8
-            bgView.backgroundColor = BG_COLORS[index]
-            checkBox.onFillColor = TINT_COLORS[index]
-        }
-    }
     var question: Question! {
         didSet{
             questionLabel.text = question.text
@@ -29,17 +21,15 @@ class QuestionCell: UITableViewCell {
         }
     }
     
-    var isDone: Bool! {
-        didSet {
-            question.isDone = isDone
-        }
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        bgView.layer.cornerRadius = bgView.frame.height/4
-        bgView.clipsToBounds = true
         checkBox.animationDuration = 0.2
+    }
+    
+    override func indexPathDidSet() {
+        super.indexPathDidSet()
+        guard let row = indexPath?.row else {return}
+        checkBox.onFillColor = TINT_COLORS[row%TINT_COLORS.count]
     }
     
 }

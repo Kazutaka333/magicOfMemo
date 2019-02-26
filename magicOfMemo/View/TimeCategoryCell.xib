@@ -31,14 +31,17 @@
                                 <color key="trackTintColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.2636183647" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レベル①夢についての100問" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPT-Ab-h9F">
-                                <rect key="frame" x="8" y="0.0" width="294.5" height="62"/>
+                                <rect key="frame" x="8" y="0.0" width="273" height="62"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50/100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yh6-lf-ZhP">
-                                <rect key="frame" x="308" y="28.5" width="43" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100/100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Yh6-lf-ZhP">
+                                <rect key="frame" x="289" y="33.5" width="62" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="LA6-Ku-euz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,9 +56,16 @@
                             <constraint firstItem="GPT-Ab-h9F" firstAttribute="width" secondItem="7ZP-p2-RN2" secondAttribute="width" multiplier="0.82" id="V8L-fQ-t4V"/>
                             <constraint firstAttribute="trailing" secondItem="Yh6-lf-ZhP" secondAttribute="trailing" constant="8" id="d1P-uL-K1i"/>
                             <constraint firstItem="PlB-gh-FHl" firstAttribute="top" secondItem="GPT-Ab-h9F" secondAttribute="bottom" id="dvB-aQ-4pb"/>
+                            <constraint firstItem="Yh6-lf-ZhP" firstAttribute="leading" secondItem="GPT-Ab-h9F" secondAttribute="trailing" constant="8" id="g5X-Gc-YAy"/>
                             <constraint firstItem="Yh6-lf-ZhP" firstAttribute="width" secondItem="7ZP-p2-RN2" secondAttribute="width" multiplier="0.12" id="jzF-iJ-LHe"/>
                             <constraint firstItem="PlB-gh-FHl" firstAttribute="bottom" secondItem="7ZP-p2-RN2" secondAttribute="bottom" constant="-10" id="tqb-xr-1WV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="V8L-fQ-t4V"/>
+                                <exclude reference="jzF-iJ-LHe"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
@@ -67,7 +77,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="I2i-Os-316"/>
             <connections>
-                <outlet property="bgView" destination="7ZP-p2-RN2" id="kJh-Sb-Yna"/>
+                <outlet property="bgView" destination="7ZP-p2-RN2" id="ypz-mW-jlx"/>
                 <outlet property="progressBar" destination="PlB-gh-FHl" id="wDb-v3-hFM"/>
                 <outlet property="progressLabel" destination="Yh6-lf-ZhP" id="18a-7W-6Zc"/>
                 <outlet property="titleLabel" destination="GPT-Ab-h9F" id="h4C-CR-eiZ"/>
