@@ -32,3 +32,8 @@ let ADMOB_APP_ID = "ca-app-pub-5469649181550273~7797734165"
 let ADMOB_TEST_AD_UNIT_ID = ""
 let AD_VIEW_HEIGHT = CGFloat(50)
 
+enum Stage {
+    case deploy
+    case development
+}
+let stage = Stage.development

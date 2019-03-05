@@ -16,7 +16,7 @@ class QuestionListViewController: UIViewController {
     
     var adIsLoaded = false
     var adView : GADBannerView!
-    let adUnitID = "ca-app-pub-3940256099942544/2934735716"
+    let adUnitID = "ca-app-pub-5469649181550273/6434172293"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,9 @@ class QuestionListViewController: UIViewController {
         adView.rootViewController = self
         adView.delegate = self
         let adRequest = GADRequest()
-        adRequest.testDevices = [ "c0b9b945e7a65bb0f5e59fbfb1f92a5d" ]
+        if stage != Stage.deploy {
+            adRequest.testDevices = [ "c0b9b945e7a65bb0f5e59fbfb1f92a5d" ]
+        }
         adView.load(adRequest)
     }
 }
