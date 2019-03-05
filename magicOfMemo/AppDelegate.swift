@@ -8,8 +8,7 @@
 
 import UIKit
 import CoreData
-
-
+import GoogleMobileAds
 
 @UIApplicationMain
 
@@ -26,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             UserDefaults.standard.set(true, forKey: "FirstLaunchDone")
         }
+        GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
         return true
     }
     

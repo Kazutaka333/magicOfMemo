@@ -29,3 +29,6 @@ let TINT_COLORS : [UIColor] = [UIColor(red:1.00, green:0.96, blue:0.38, alpha:1.
                                   UIColor(red:0.47, green:0.20, blue:0.72, alpha:1.0)]
 
 let ADMOB_APP_ID = "ca-app-pub-5469649181550273~7797734165"
+let ADMOB_TEST_AD_UNIT_ID = ""
+let AD_VIEW_HEIGHT = CGFloat(50)
+

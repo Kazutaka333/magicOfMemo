@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,13 +21,21 @@ class ViewController: UIViewController {
     }
     
     var levels: [Level] = []
+    // ad unit id for deploy
+//    let adUnitId = "ca-app-pub-5469649181550273/2393186636"
+    var adIsLoaded = false
+    var adView : GADBannerView!
+    let adUnitID = "ca-app-pub-3940256099942544/2934735716"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadLevels()
         updateUI()
+        setupAdView()
         tableView.register(UINib(nibName: "LevelCell", bundle: Bundle.main), forCellReuseIdentifier: "LevelCell")
+        tableView.register(UINib(nibName: "BannerCell", bundle: Bundle.main), forCellReuseIdentifier: "BannerCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,19 +75,38 @@ class ViewController: UIViewController {
         progressButton.title = "\(doneCount)/1000"
     }
     
-    
+    func setupAdView() {
+        // Ensure subview layout has been performed before accessing subview sizes.
+        tableView.layoutIfNeeded()
+        let adSize = GADAdSizeFromCGSize(
+            CGSize(width: tableView.contentSize.width, height: AD_VIEW_HEIGHT))
+        adView = GADBannerView(adSize: adSize)
+        adView.adUnitID = adUnitID
+        adView.rootViewController = self
+        adView.delegate = self
+        let adRequest = GADRequest()
+        adRequest.testDevices = [ "c0b9b945e7a65bb0f5e59fbfb1f92a5d" ]
+        adView.load(adRequest)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return levels.count
+        return levels.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell") as! LevelCell
-        cell.indexPath = indexPath
-        cell.level = levels[indexPath.row]
-        return cell
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "BannerCell") as? BannerCell,
+                adIsLoaded else { return UITableViewCell()}
+            cell.load(adView: adView)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LevelCell") as? LevelCell else { return UITableViewCell()}
+            cell.indexPath = indexPath
+            cell.level = levels[indexPath.row-1]
+            return cell
+        }
     }
     
 }
@@ -85,9 +114,10 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row > 0 else { return }
         let storyboard = UIStoryboard(name: "TimeCategory", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! TimeCategoryViewController
-        let level = levels[indexPath.row]
+        let level = levels[indexPath.row-1]
         guard let categories = level.timeCategories.array as? [TimeCategory] else {return}
         vc.title = level.title
         vc.timeCategories = categories
@@ -96,7 +126,23 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            guard adIsLoaded else { return 0 }
+            return AD_VIEW_HEIGHT
+        }
         return CELL_HEIGHT
     }
 }
 
+extension ViewController: GADBannerViewDelegate {
+    func adViewDidReceiveAd(_ adView: GADBannerView) {
+        // Mark banner ad as succesfully loaded.
+        adIsLoaded = true
+        tableView.reloadData()
+    }
+    
+    func adView(_ adView: GADBannerView,
+                didFailToReceiveAdWithError error: GADRequestError) {
+        print("Failed to receive ad: \(error.localizedDescription)")
+    }
+}
