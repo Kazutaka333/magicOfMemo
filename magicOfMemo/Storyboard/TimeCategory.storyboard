@@ -36,7 +36,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TA1-NM-nHG"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="1As-IU-Kzy">
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="1As-IU-Kzy">
                         <barButtonItem key="backBarButtonItem" title="   " id="LiJ-Ku-fYK"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

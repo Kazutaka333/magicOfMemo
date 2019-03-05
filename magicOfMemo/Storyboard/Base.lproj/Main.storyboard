@@ -36,10 +36,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="レベル" id="b3h-lc-mNT">
+                    <navigationItem key="navigationItem" title="自己分析1000問" largeTitleDisplayMode="always" id="b3h-lc-mNT">
                         <barButtonItem key="backBarButtonItem" title="  " id="D3O-ml-Gg9"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="100/1000" style="plain" id="wzi-4w-IIf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressButton" destination="wzi-4w-IIf" id="YQM-lx-tQF"/>
                         <outlet property="tableView" destination="oSk-gP-cYf" id="oRN-IT-cMs"/>
                     </connections>
                 </viewController>

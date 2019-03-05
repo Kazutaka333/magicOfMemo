@@ -20,6 +20,10 @@ class LevelCell: ProgressBarCell {
             }
             progressBar.setProgress(Float(doneCount)/Float(level.questions.count), animated: false)
             progressLabel.text = "\(doneCount)/\(level.questions.count)"
+
+            progressLabel.sizeToFit()
         }
     }
+
 }
+

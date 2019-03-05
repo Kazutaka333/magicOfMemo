@@ -16,6 +16,7 @@ class QuestionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "QuestionCell", bundle: Bundle.main), forCellReuseIdentifier: "QuestionCell")
+        tableView.contentInsetAdjustmentBehavior = .never
     }
 }
 

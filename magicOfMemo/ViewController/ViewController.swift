@@ -11,19 +11,26 @@ import CoreData
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var progressButton: UIBarButtonItem! {
+        didSet {
+            let attributes = [NSAttributedString.Key.strokeColor: UIColor.lightGray]
+            progressButton.setTitleTextAttributes(attributes, for: .disabled)
+        }
+    }
+    
     var levels: [Level] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadLevels()
+        updateUI()
         tableView.register(UINib(nibName: "LevelCell", bundle: Bundle.main), forCellReuseIdentifier: "LevelCell")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.reloadData()
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateUI()
     }
     
     func loadLevels() {
@@ -41,6 +48,21 @@ class ViewController: UIViewController {
         } catch {
             fatalError("There was an error fetching the list of levels!")
         }
+    }
+    
+    func updateUI() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.reloadData()
+        var doneCount = 0
+        for level in levels {
+            guard let questions = level.questions.array as? [Question] else {return}
+            for q in questions {
+                if q.isDone {
+                    doneCount += 1
+                }
+            }
+        }
+        progressButton.title = "\(doneCount)/1000"
     }
     
     
@@ -70,7 +92,6 @@ extension ViewController: UITableViewDelegate {
         vc.title = level.title
         vc.timeCategories = categories
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.navigationBar.prefersLargeTitles = false
         show(vc, sender: self)
     }
     

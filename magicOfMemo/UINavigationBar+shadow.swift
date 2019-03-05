@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+shadow.swift
+//  UINavigationBar+Shadow.swift
 //  magicOfMemo
 //
 //  Created by Kazutaka Homma on 2/26/19.
@@ -10,6 +10,7 @@ import UIKit
 
 extension UINavigationBar {
     open override func awakeFromNib() {
+        super.awakeFromNib()
         shadowImage = UIImage()
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
