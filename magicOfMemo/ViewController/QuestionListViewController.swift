@@ -16,7 +16,12 @@ class QuestionListViewController: UIViewController {
     
     var adIsLoaded = false
     var adView : GADBannerView!
-    let adUnitID = "ca-app-pub-5469649181550273/6434172293"
+    var adUnitID: String {
+        if stage != Stage.deploy {
+            return ADMOB_TEST_AD_UNIT_ID
+        }
+        return "ca-app-pub-5469649181550273/6434172293"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

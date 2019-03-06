@@ -15,7 +15,12 @@ class TimeCategoryViewController: UIViewController {
     
     var adIsLoaded = false
     var adView : GADBannerView!
-    let adUnitID = "ca-app-pub-5469649181550273/6756895489"
+    var adUnitID: String {
+        if stage != Stage.deploy {
+            return ADMOB_TEST_AD_UNIT_ID
+        }
+        return "ca-app-pub-5469649181550273/6756895489"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

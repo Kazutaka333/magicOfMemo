@@ -11,9 +11,12 @@ import GoogleMobileAds
 class BannerCell: UITableViewCell {
 
     func load(adView: GADBannerView) {
-        for subview in subviews {
+        contentView.removeConstraints(contentView.constraints)
+        for subview in contentView.subviews {
             subview.removeFromSuperview()
         }
-        addSubview(adView)
+        contentView.addSubview(adView)
+        contentView.centerXAnchor.constraint(equalTo: adView.centerXAnchor).isActive = true
+        contentView.centerYAnchor.constraint(equalTo: adView.centerYAnchor).isActive = true
     }
 }
