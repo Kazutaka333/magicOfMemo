@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMobileAds
+import StoreKit
 
 class ViewController: UIViewController {
 
@@ -77,6 +78,17 @@ class ViewController: UIViewController {
             }
         }
         progressButton.title = "\(doneCount)/1000"
+        if doneCount > 10 && !(UserDefaults.standard.bool(forKey: "reviewAsked")) {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
+            UserDefaults.standard.set(true, forKey: "reviewAsked")
+        } else if doneCount > 50 && !(UserDefaults.standard.bool(forKey: "reviewAsked2")) {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
+            UserDefaults.standard.set(true, forKey: "reviewAsked2")
+        }
     }
     
     func setupAdView() {
