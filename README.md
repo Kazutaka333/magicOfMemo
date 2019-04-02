@@ -15,7 +15,8 @@ Library:
 Dependency Manager:
 - Carthage
 - CocoaPods
+
 ![Top image](https://raw.githubusercontent.com/Kazutaka333/magicOfMemo/master/top.png)
 
 ## Challenge that I have:
-I needed to create a model class by subclassing both Codable and NSManagedObject so that I can decode JSON object and store them into CoreData seemlessly. This was a bit challenging but gave me the deeper understanding of Codable and NSManagedObject.
+I needed to create a model class by subclassing both Codable and NSManagedObject so that I can decode JSON object and store them into CoreData seamlessly. This was a bit challenging but gave me the deeper understanding of Codable and NSManagedObject.
